@@ -1,0 +1,79 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SectionMain from "../components/SectionMain.astro";
+---
+
+<Layout
+  title="Noticias.dev | Enterate de las noticias internacionales del mundo de la programación"
+>
+  <main>
+    <aside>
+      <h1>Noticias.dev</h1>
+      <p-box>
+        Newsletter para programadores y desarrolladores web. 100% gratis. Todos
+        los martes.
+      </p-box>
+    </aside>
+    <section-main>
+      <SectionMain />
+    </section-main>
+  </main>
+</Layout>
+
+<style>
+  main {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+  aside {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px;
+    justify-content: center;
+  }
+
+  aside h1 {
+    font-size: 60px;
+  }
+
+  section-main {
+    border-left: 10px solid #222;
+    border-radius: 6px;
+  }
+
+  p-box {
+    opacity: 50%;
+    padding: 6px;
+    width: 300px;
+  }
+
+  @media screen and (max-width: 900px) {
+    main {
+      display: block;
+    }
+
+    aside {
+      position: sticky;
+      top: 0;
+      display: block;
+      height: 100px;
+      background-color: #121212;
+      width: 100%;
+      z-index: 10;
+    }
+
+    aside p-box {
+      opacity: 0;
+    }
+
+    section-main {
+      width: 200px;
+      margin: 0 auto;
+    }
+  }
+</style>
